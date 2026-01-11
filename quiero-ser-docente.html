@@ -3,24 +3,35 @@
 <head>
 <meta charset="UTF-8">
 <title>Quiero ser docente – Sol Naranja</title>
+
 <style>
 body {
 font-family: Arial, sans-serif;
-background: #fff7f0;
+background: #fff4ec;
 text-align: center;
-padding: 40px;
+padding: 40px 20px;
 }
+
+h2 {
+color: #333;
+}
+
 button {
 display: block;
 margin: 15px auto;
 padding: 15px;
-width: 90%;
-max-width: 400px;
+width: 100%;
+max-width: 420px;
 font-size: 16px;
 border: none;
-border-radius: 8px;
+border-radius: 10px;
 background: #ff7a18;
 color: white;
+cursor: pointer;
+}
+
+button:hover {
+background: #e86610;
 }
 </style>
 </head>
@@ -30,28 +41,38 @@ color: white;
 <h2 id="pregunta">¿Querés trabajar como docente?</h2>
 
 <div id="opciones">
-<button onclick="respuesta1()">Sí</button>
-<button onclick="respuestaNo()">No</button>
+<button onclick="paso1()">Sí, quiero</button>
+<button onclick="noDocente()">No</button>
 </div>
 
 <script>
-function respuesta1() {
+function paso1() {
 document.getElementById("pregunta").innerText =
-"¿Ya estás inscripto en el sistema educativo?";
+"¿Sos docente o estudiante de formación docente?";
 document.getElementById("opciones").innerHTML = `
-<button onclick="final()">Sí</button>
-<button onclick="final()">No</button>
+<button onclick="paso2()">Sí</button>
+<button onclick="paso2()">Estoy estudiando</button>
 `;
 }
 
-function respuestaNo() {
+function paso2() {
+document.getElementById("pregunta").innerText =
+"¿Necesitás sumar puntaje para el ingreso a la docencia?";
+document.getElementById("opciones").innerHTML = `
+<button onclick="final()">Sí, necesito puntaje</button>
+<button onclick="final()">Quiero información</button>
+`;
+}
+
+function noDocente() {
 document.getElementById("pregunta").innerText =
 "Este espacio es para quienes quieren ejercer la docencia.";
 document.getElementById("opciones").innerHTML = "";
 }
 
 function final() {
-window.location.href = "https://wa.me/5492235298968";
+window.location.href =
+"https://wa.me/549XXXXXXXXXX?text=Hola%20quiero%20información%20sobre%20las%20capacitaciones%20de%20Sol%20Naranja";
 }
 </script>
 
